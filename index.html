@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Detail form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="header">
+      <h1>Personal Detail Form</h1>
+      <p>All field are required.</p>
+    </div>
+      <form>
+        <div class="personal">
+          <h3>Personal Information</h3>
+          <label for="name">Name:</label>
+          <input  id = "name" type="text" name="name" required />
+          <label for="email">Email:</label>
+          <input id="email" type="email" name="email" required />
+          <label for="phone">Phone:</label>
+          <input  id="phone" type="tel" name="phone" required />
+          <label for="age">Age:</label>
+          <input id="age" type="number" name="age" required />
+          <label for="occupation">Occupation:</label>
+          <input id="occupation" type="text" name="occupation" required />
+          <label for="id_proof">ID Proof:</label>
+          <input id="idProof" type="file" name="id_proof" required />
+        </div>
+        <div class="address">
+          <h3>Address</h3>
+          <label for="street">Street:</label>
+          <input type="text" name="street" required />
+          <label for="city">City:</label>
+          <input type="text" name="city" required />
+          <label for="state">State:</label>
+          <input type="text" name="state" required />
+          <label for="zip">Zip Code:</label>
+          <input type="text" name="zip" required />
+        </div>
+        <div class="additional">
+          <h3>Additional Information</h3>
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" required />
+          <label for="gender">Gender:</label>
+          <select id="gender" name="gender" required>
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option></select
+          ><br /><br />
+          <label for="bio">Short Bio:</label><br />
+          <textarea id="bio" name="bio" rows="4" cols="50" required></textarea
+          ><br /><br />
+        </div>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,321 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", system-ui, sans-serif;
+}
+body {
+  min-height: 100vh;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(145deg, #f0edff 0%, #fce7f3 45%, #e0f9f6 100%);
+}
+.card {
+  width: 100%;
+  max-width: 680px;
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(120, 80, 200, 0.08),
+    0 8px 32px rgba(120, 80, 200, 0.11),
+    0 32px 64px rgba(0, 0, 0, 0.07);
+}
+.card::before {
+  content: "";
+  display: block;
+  height: 6px;
+  background: linear-gradient(90deg, #06b6d4 0%, #8b5cf6 50%, #ec4899 100%);
+}
+.header{
+    text-align: center;
+    padding: 2rem 2.5rem 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 1.5rem;
+}
+
+.header h1{
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1f2937;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.header p{
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+.header p::before{
+    content: "* ";
+    color: #ef4444;
+    font-weight: 700;
+}
+form {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.personal br,
+.address br,
+.additional br {
+  display: none;
+}
+
+.personal,
+.address,
+.additional {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  gap: 0.65rem 1.25rem;
+  padding: 1.75rem;
+  border-radius: 14px;
+  border-left: 4px solid;
+}
+
+.personal {
+  background: #ecfeff;
+  border-left-color: #06b6d4;
+}
+.address {
+  background: #f5f3ff;
+  border-left-color: #8b5cf6;
+}
+.additional {
+  background: #fdf4ff;
+  border-left-color: #ec4899;
+}
+.personal h3,
+.address h3,
+.additional h3 {
+  grid-column: 1 / -1;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.125rem;
+}
+
+.personal h3 {
+  color: #0e7490;
+  border-bottom: 1px solid rgba(6, 182, 212, 0.22);
+}
+.address h3 {
+  color: #6d28d9;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.22);
+}
+.additional h3 {
+  color: #be185d;
+  border-bottom: 1px solid rgba(236, 72, 153, 0.22);
+}
+.personal label,
+.address label,
+.additional label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+}
+
+.personal label {
+  color: #0891b2;
+}
+.address label {
+  color: #7c3aed;
+}
+.additional label {
+  color: #db2777;
+}
+
+.additional label[for="bio"] {
+  align-self: start;
+  margin-top: 0.6rem;
+}
+
+.personal input:not([type="file"]),
+.address input,
+.additional input,
+.personal select,
+.address select,
+.additional select,
+.personal textarea,
+.address textarea,
+.additional textarea {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.9375rem;
+  color: #1e1b4b;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 9px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.personal input:focus,
+.personal select:focus,
+.personal textarea:focus {
+  border-color: #06b6d4;
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.16);
+}
+
+.address input:focus,
+.address select:focus,
+.address textarea:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.16);
+}
+
+.additional input:focus,
+.additional select:focus,
+.additional textarea:focus {
+  border-color: #ec4899;
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.16);
+}
+
+.personal input[type="file"] {
+  padding: 0.45rem 0.625rem;
+  font-size: 0.8125rem;
+  color: #4b5563;
+  border: 1.5px dashed #9ae6d8;
+  cursor: pointer;
+}
+.personal input[type="file"]:hover {
+  border-color: #06b6d4;
+}
+.personal input[type="file"]:focus {
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.16);
+}
+.personal select,
+.address select,
+.additional select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.additional textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.55;
+}
+
+form > input[type="submit"] {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #06b6d4 0%, #8b5cf6 50%, #ec4899 100%);
+  background-size: 200% 100%;
+  background-position: 0%;
+  cursor: pointer;
+  outline: none;
+  transition:
+    background-position 0.45s ease,
+    box-shadow 0.2s,
+    transform 0.15s;
+}
+
+form > input[type="submit"]:hover {
+  background-position: 100%;
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.35);
+  transform: translateY(-2px);
+}
+
+form > input[type="submit"]:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1.25rem 0.75rem;
+  }
+
+  form {
+    padding: 1.5rem 1rem;
+    gap: 1.125rem;
+  }
+
+  .personal,
+  .address,
+  .additional {
+    padding: 1.25rem;
+    grid-template-columns: 1fr; /* stack labels above inputs */
+    gap: 0.375rem;
+  }
+  .personal br + label,
+  .address br + label,
+  .additional br + label {
+    margin-top: 0.75rem;
+  }
+
+  .additional label[for="bio"] {
+    align-self: auto;
+    margin-top: 0.75rem;
+  }
+}
+
+@media (max-width: 400px) {
+form {
+    padding: 1rem 0.75rem;
+ }
+.personal,
+  .address,
+  .additional {
+    padding: 1rem;
+ }
+.header{
+    padding: 1.5rem 1rem 1rem;
+}
+
+.header h1{
+    font-size: 1.8rem;
+}
+
+.header p{
+    font-size: 0.9rem;
+}
+
+}
+.error {
+    border: 2px solid red;
+}
+
+.success {
+    border: 2px solid green;
+}
+
+small {
+    display: block;
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
